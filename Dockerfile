@@ -13,6 +13,9 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY . .
 
+RUN curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=1-9fwrJXDpZdzcMJsn9s_I4HfOW-gTu9C" > /dev/null
+RUN curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=1-9fwrJXDpZdzcMJsn9s_I4HfOW-gTu9C" -o GPT2_Spongebob.zip
+RUN unzip GPT2_Spongebob.zip
 
 EXPOSE 80
 
