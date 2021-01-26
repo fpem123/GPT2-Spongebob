@@ -19,6 +19,7 @@ tokenizer = AutoTokenizer.from_pretrained('./GPT2-large_Spongebob')
 model = AutoModelForCausalLM.from_pretrained('./GPT2-large_Spongebob')
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(device)
 model.to(device)
 
 requests_queue = Queue()    # request queue.
