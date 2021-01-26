@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>GPT-2 Spongebob script</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<script type="text/javascript">
+    let time_obj = undefined;
+    let flag = undefined;
+    let chars = undefined;
+
+    window.onload = () => {
+        time_obj = document.getElementById("timer");
+        flag = false;
+        //chars = ["Spongebob"];
+    }
+
+    function double_submit_check() {
+        if (flag) {
+            console.log("double");
+            return true;
+        }
+        else {
+            flag = true;
+
+            return false;
+        }
+    }
+
+    function send_req() {
+        if (double_submit_check()){
+            return ;
+        }
+
+        const text = document.getElementById("text").value;
+
+        if (text == '') {
+            document.getElementById('warning').innerText = 'Please fill text!';
+            flag = false;
+            return ;
+        }
+
+        const name = document.getElementById("name").value;
+
+        const formData = new FormData();
+        const url = "/Spongebob";
+        let start = 0;
+
+        formData.append('name', name);
+        formData.append('text', text);
+        formData.append('length', 200);
+
+        timer = setInterval(() => {
+            start += 1;
+            time_obj.innerText = `${start / 10} 's`;
+        }, 100);
+
+        fetch (url, { method: 'POST', body: formData, })
+        .then(response => {
+            if (response.status === 200) {
+                return response.json();
+            } else {
+                clearInterval(timer);
+            }
+        }).catch(err => {
+            clearInterval(timer);
+            flag = false;
+            document.getElementById('warning').innerText = err;
+        }).then(data => {
+            data = data[0];
+
+            const table = document.getElementById('generated');
+
+            // 기존 내용 삭제
+            while (table.hasChildNodes()) {
+                table.removeChild(table.lastChild);
+            }
+
+            for (i in data) {
+                const row = table.insertRow();
+                const name = row.insertCell(0);
+                const text = row.insertCell(1);
+
+                name.style.width = '20%';
+                text.style.width = '70%';
+                text.style.height = '60pt';
+
+                /*
+                if (chars.includes(data[i][0])) {
+                    name.innerHTML = `<td><img src="../static/${data[i][0]}.png" width="50" height="70"><br>${data[i][0]}</td>`;
+                } else {
+                    name.innerHTML = `<td><br>${data[i][0]}</td>`;
+                }
+                */
+                name.innerHTML = `<td><br>${data[i][0]}</td>`;
+                text.innerHTML = data[i][1];
+            }
+
+            clearInterval(timer);
+            time_obj.innerText = 'Done!';
+            flag = false;
+        }).catch(err => {
+            clearInterval(timer);
+            flag = false;
+            document.getElementById('warning').innerText = err;
+        });
+    }
+
+</script>
+<body>
+    <div class="styles">
+        <style>
+                #button{
+                    border-top-left-radius: 5pt;
+                    border-top-right-radius: 5pt;
+                    border-bottom-left-radius: 5pt;
+                    border-bottom-right-radius: 5pt;
+                }
+
+                #length{
+                    width: 70px;
+                    height: 30px;
+                    border-top-left-radius: 5pt;
+                    border-top-right-radius: 5pt;
+                    border-bottom-left-radius: 5pt;
+                    border-bottom-right-radius: 5pt;
+                }
+        </style>
+    </div>
+    <div class="container">
+        <div class="jumbotron mt-3">
+            <div class="intro">
+                <br>
+                <!-- Project title -->
+                <h1>GPT-2 Spongebob</h1><br>
+                <a>Generate Spongebob script using GPT-2 model.</a><br><br>
+                <a>Git hub repository : </a> <a href="" target="_blank">GPT-2 Spongebob</a><br>
+                <a>Open API : </a> <a href="https://ainize.ai/fpem123/GPT2-Rick-N-Morty?branch=master" target="_blank">On Ainize</a><br>
+                <a>Training data : </a><a href="https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-completed-transcripts" target="_blank">Kaggle</a><br><br>
+            </div>
+
+            <hr width="90%">
+
+            <div class="Notice">
+                <h3>Notice</h3>
+                <ul>
+                    <li>In this demo, the text length is fixed at 200.</li>
+                    <li>The last line can be cut off in the middle.</li>
+                </ul>
+            </div>
+
+            <br><hr width="90%">
+
+            <div class="sample">
+                <h3><label>Example</label></h3>
+                <h5><label>Input</label></h5>
+                <label>&nbsp;&nbsp;Character: Spongebob<br>&nbsp;&nbsp;Text: Hello Patrick</label><br><br>
+                <h5><label>Script</label></h5>
+                <img src="../static/Sample.PNG" width="100%">
+            </div>
+
+            <br><hr width="90%">
+
+            <div class="generate">
+                <h3>Try it!</h3><br>
+                <label>Character: </label>
+                <select id="name" style="width:100pt">
+                    <option value="Spongebob">Spongebob</option>
+                    <option value="Patrick">Patrick</option>
+                    <option value="Squidward">Squidward</option>
+                    <option value="Krabs">Mr.Krabs</option>
+                    <option value="Plankton">Plankton</option>
+                </select><br>
+                <label>Text: </label>
+                <input type="text" id="text" style="width:40%">
+                <button class="btn btn-primary btn=lg" type="submit" id="button" onclick="send_req();">submit</button><br>
+                <b><label id="warning" style="color:red;"></label></b>
+            </div>
+
+            <br><hr width="90%">
+
+            <div class="result">
+                <h3><label>Result</label>&nbsp;&nbsp;&nbsp;<label id="timer"></label></h3>
+                <h5><label>Script</label></h5>
+                <!-- Generate result table -->
+                <table id="generated"></table>
+            </div>
+
+            <br><hr width="50%">
+        </div>
+    </div>
+</body>
+</html>
