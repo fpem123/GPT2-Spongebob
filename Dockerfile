@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y && \
     apt-get install -y apt-utils wget && \
     apt-get -qq -y install curl && \
-    unzip
+    apt-get install -y unzip
 
 RUN pip install --upgrade pip
 RUN pip install transformers
