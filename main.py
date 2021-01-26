@@ -61,7 +61,7 @@ def mk_spongebob_script(name, text, length):
         min_length = len(input_ids.tolist()[0])
         length += min_length
 
-        length = length if length > 100 else 100
+        length = length if length > 50 else 50
 
         # model generating
         sample_outputs = model.generate(input_ids, pad_token_id=50256,
