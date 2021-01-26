@@ -16,10 +16,10 @@ info:
 
       And you can use this in demo page. >> [https://master-gpt2-spongebob-fpem123.endpoint.ainize.ai/](https://master-gpt2-spongebob-fpem123.endpoint.ainize.ai/)
 
-      GPT-2 model >> [Spongebob Squarepants Completed Transcripts](https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-completed-transcripts)
+      Fine tuning data reference >> [Spongebob Squarepants Completed Transcripts](https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-completed-transcripts)
 
 servers:
-  - url: https://master-gpt2-spongebob-fpem123.endpoint.ainize.ai
+  - url: https://master-gpt2-spongebob-fpem123.endpoint.ainize.ai/
 
 paths:
   /Spongebob:
@@ -63,13 +63,6 @@ paths:
             application/json:
               schema:
                 type: object
-                properties:
-                  number:
-                    type: array
-                    items:
-                      type: array
-                      items:
-                        type: string
         '400':
           description: "Bad Request Error"
         '429':

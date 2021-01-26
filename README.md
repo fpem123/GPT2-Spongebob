@@ -8,11 +8,14 @@ Base model: gpt-2 large
 
 Fine tuning data: https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-completed-transcripts
 
+Model download: https://drive.google.com/file/d/1-9fwrJXDpZdzcMJsn9s_I4HfOW-gTu9C/view?usp=sharing
+
     How to use:
       * First, Choose Rick and Morty character name.
       * Second, Fill what the character will say in text. This will be base of script.
       * And then, Fill number in length. Text is created as long as "length". I recommend between 100 and 300.
       * If length is so big, generate time will be long.
+
 
 ### Post parameter
     
@@ -22,7 +25,7 @@ Fine tuning data: https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-co
 
 ### ** With CLI **
 
-    curl 
+    curl -X POST "https://master-gpt2-spongebob-fpem123.endpoint.ainize.ai/Spongebob" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "name=Spongebob" -F "text=Hello" -F "length=100"
 
 ### ** With swagger **
 
