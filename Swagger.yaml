@@ -31,7 +31,7 @@ paths:
 
           Request body example
 
-              name: Spongebob
+              name: SpongeBob
               text: Hello Patrick
               length: 150
 
