@@ -18,7 +18,7 @@
     window.onload = () => {
         time_obj = document.getElementById("timer");
         flag = false;
-        chars = ["SpongeBob", "Patrick", "Squidward", "Sandy", "Mr. Krabs", "Plankton"];
+        chars = ["SpongeBob", "Patrick", "Squidward", "Sandy", "Mr. Krabs", "Plankton", "Narrator"];
     }
 
     function double_submit_check() {
@@ -87,15 +87,15 @@
                 const name = row.insertCell(0);
                 const text = row.insertCell(1);
 
-                name.style.width = '20%';
+                name.style.width = "20%";
                 text.style.width = '70%';
                 text.style.height = '60pt';
 
 
                 if (chars.includes(data[i][0])) {
-                    name.innerHTML = `<td align="center"><img src="../static/${data[i][0]}.png" width="50" height="70"><br>${data[i][0]}</td>`;
+                    name.innerHTML = `<td class="name"><center><img src="../static/${data[i][0]}.png" width="50" height="70"><br>${data[i][0]}</center></td>`;
                 } else {
-                    name.innerHTML = `<td align="center"><br>${data[i][0]}</td>`;
+                    name.innerHTML = `<td class="name"><center><br>${data[i][0]}</center></td>`;
                 }
 
                 text.innerHTML = data[i][1];
@@ -130,6 +130,12 @@
                     border-bottom-left-radius: 5pt;
                     border-bottom-right-radius: 5pt;
                 }
+
+                table {
+                  border-spacing: 10px;
+                  border-collapse: separate;
+                }
+
         </style>
     </div>
     <div class="container">
@@ -159,7 +165,7 @@
             <div class="sample">
                 <h3><label>Example</label></h3>
                 <h5><label>Input</label></h5>
-                <label>&nbsp;&nbsp;Character: SpongeBob<br>&nbsp;&nbsp;Text: Hello Patrick</label><br><br>
+                <label>&nbsp;&nbsp;Character: SpongeBob<br>&nbsp;&nbsp;Text: Hello, Patrick</label><br><br>
                 <h5><label>Script</label></h5>
                 <img src="../static/Sample.PNG" width="100%">
             </div>
@@ -189,7 +195,7 @@
                 <h3><label>Result</label>&nbsp;&nbsp;&nbsp;<label id="timer"></label></h3>
                 <h5><label>Script</label></h5>
                 <!-- Generate result table -->
-                <table id="generated"></table>
+                <table id="generated" width="100%"></table>
             </div>
 
             <br><hr width="50%">
