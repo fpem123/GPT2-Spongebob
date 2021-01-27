@@ -2,7 +2,7 @@
 
 [![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=https://github.com/fpem123/GPT2-Spongebob)
 
-This project generates Rick and Morty script using GPT-2 model.
+This project generates Spongebob script using GPT-2 model.
 
 Base model: gpt-2 large
 
@@ -11,7 +11,7 @@ Fine tuning data: https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-co
 Model download: https://drive.google.com/file/d/1-9fwrJXDpZdzcMJsn9s_I4HfOW-gTu9C/view?usp=sharing
 
     How to use:
-      * First, Choose Rick and Morty character name.
+      * First, Choose Spongebob character name.
       * Second, Fill what the character will say in text. This will be base of script.
       * And then, Fill number in length. Text is created as long as "length". I recommend between 100 and 300.
       * If length is so big, generate time will be long.
