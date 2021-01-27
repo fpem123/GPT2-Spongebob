@@ -44,7 +44,7 @@ paths:
               properties:
                 name:
                   type: string
-                  enum: [Spongebob, Patrick, Squidward, Krabs, Plankton]
+                  enum: [Spongebob, Patrick, Squidward, Sandy, Mr. Krabs, Plankton]
                   description: "The Spongebob character name."
                 text:
                   type: string
