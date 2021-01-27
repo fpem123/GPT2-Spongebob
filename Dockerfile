@@ -19,8 +19,6 @@ RUN curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=1-9fw
 RUN curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=1-9fwrJXDpZdzcMJsn9s_I4HfOW-gTu9C" -o GPT2-large_Spongebob.zip
 RUN unzip GPT2-large_Spongebob.zip
 RUN rm GPT2-large_Spongebob.zip
-RUN ls -l
-RUN ls GPT2-large_Spongebob -l
 
 EXPOSE 80
 
