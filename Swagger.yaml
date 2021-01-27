@@ -22,7 +22,7 @@ servers:
   - url: https://master-gpt2-spongebob-fpem123.endpoint.ainize.ai/
 
 paths:
-  /Spongebob:
+  /SpongeBob:
     post:
       requestBody:
         required: true
