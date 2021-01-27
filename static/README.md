@@ -1,6 +1,6 @@
 # Image reference
 
-Spongebob.png: http://cartoonbros.com/wp-content/uploads/2015/12/SpongeBob-SquarePants-1.png
+SpongeBob.png: http://cartoonbros.com/wp-content/uploads/2015/12/SpongeBob-SquarePants-1.png
 
 Patrick.png: https://upload.wikimedia.org/wikipedia/en/7/7e/Patrick_Star.png
 

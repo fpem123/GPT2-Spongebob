@@ -2,7 +2,7 @@
     Name: main.py
     Writer: Hoseop Lee, Ainizer
     Rule: Flask app
-    update: 21.01.26
+    update: 21.01.27
 '''
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -49,7 +49,7 @@ handler = Thread(target=handle_requests_by_batch).start()
 
 ##
 # GPT-2 generator.
-# Make Spongebob script.
+# Make SpongeBob script.
 def mk_spongebob_script(name, text, length):
     try:
         text = name + ': ' + text.strip()
@@ -95,7 +95,7 @@ def mk_spongebob_script(name, text, length):
 
 ##
 # Get post request page.
-@app.route('/Spongebob', methods=['POST'])
+@app.route('/SpongeBob', methods=['POST'])
 def generate():
     # GPU app can process only one request in one time.
     if requests_queue.qsize() > BATCH_SIZE:

@@ -1,15 +1,15 @@
 openapi: 3.0.0   # Open api version
 
 info:
-  title: GPT2-Spongebob
+  title: GPT2-SpongeBob
   version: "v0.1"
   contact:
     name: AInizer - Lee hoseop
   description: |
-    This app is generate Spongebob script as array.
+    This app is generate SpongeBob script as array.
     ---
       How to use:
-      * First, Choose Spongebob character name.
+      * First, Choose SpongeBob character name.
       * Second, Fill what the character will say in text. This will be base of script.
       * And then, Fill number in length. Text is created as long as "length". I recommend between 100 and 300.
       * If length is so big, generate time will be long.
@@ -44,7 +44,7 @@ paths:
               properties:
                 name:
                   type: string
-                  enum: [Spongebob, Patrick, Squidward, Sandy, Mr. Krabs, Plankton]
+                  enum: [SpongeBob, Patrick, Squidward, Sandy, Mr. Krabs, Plankton]
                   description: "The Spongebob character name."
                 text:
                   type: string

@@ -18,7 +18,7 @@
     window.onload = () => {
         time_obj = document.getElementById("timer");
         flag = false;
-        chars = ["Spongebob", "Patrick", "Squidward", "Sandy", "Mr. Krabs", "Plankton"];
+        chars = ["SpongeBob", "Patrick", "Squidward", "Sandy", "Mr. Krabs", "Plankton"];
     }
 
     function double_submit_check() {
@@ -49,7 +49,7 @@
         const name = document.getElementById("name").value;
 
         const formData = new FormData();
-        const url = "/Spongebob";
+        const url = "/SpongeBob";
         let start = 0;
 
         formData.append('name', name);
@@ -137,9 +137,9 @@
             <div class="intro">
                 <br>
                 <!-- Project title -->
-                <h1>GPT-2 Spongebob</h1><br>
-                <a>Generate Spongebob script using GPT-2 model.</a><br><br>
-                <a>Git hub repository : </a> <a href="https://github.com/fpem123/GPT2-Spongebob" target="_blank">GPT-2 Spongebob</a><br>
+                <h1>GPT-2 SpongeBob</h1><br>
+                <a>Generate SpongeBob script using GPT-2 model.</a><br><br>
+                <a>Git hub repository : </a> <a href="https://github.com/fpem123/GPT2-Spongebob" target="_blank">GPT-2 SpongeBob</a><br>
                 <a>Open API : </a> <a href="https://ainize.ai/fpem123/GPT2-Spongebob?branch=master" target="_blank">On Ainize</a><br>
                 <a>Fine tuning data : </a><a href="https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-completed-transcripts" target="_blank">Kaggle</a><br><br>
             </div>
@@ -159,7 +159,7 @@
             <div class="sample">
                 <h3><label>Example</label></h3>
                 <h5><label>Input</label></h5>
-                <label>&nbsp;&nbsp;Character: Spongebob<br>&nbsp;&nbsp;Text: Hello Patrick</label><br><br>
+                <label>&nbsp;&nbsp;Character: SpongeBob<br>&nbsp;&nbsp;Text: Hello Patrick</label><br><br>
                 <h5><label>Script</label></h5>
                 <img src="../static/Sample.PNG" width="100%">
             </div>
@@ -170,7 +170,7 @@
                 <h3>Try it!</h3><br>
                 <label>Character: </label>
                 <select id="name" style="width:100pt">
-                    <option value="Spongebob">Spongebob</option>
+                    <option value="SpongeBob">SpongeBob</option>
                     <option value="Patrick">Patrick</option>
                     <option value="Squidward">Squidward</option>
                     <option value="Sandy">Sandy</option>
