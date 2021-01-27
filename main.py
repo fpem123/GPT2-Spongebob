@@ -1,7 +1,7 @@
 '''
     Name: main.py
     Writer: Hoseop Lee, Ainizer
-    Rule: Flask app
+    Rule: Flask app server
     update: 21.01.27
 '''
 
@@ -15,11 +15,11 @@ import time
 
 app = Flask(__name__)
 
+# Model & Tokenizer loading
 tokenizer = AutoTokenizer.from_pretrained('./GPT2-large_Spongebob')
 model = AutoModelForCausalLM.from_pretrained('./GPT2-large_Spongebob')
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print(device)
 model.to(device)
 
 requests_queue = Queue()    # request queue.
