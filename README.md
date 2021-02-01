@@ -4,15 +4,15 @@
 
 This project generates SpongeBob script using GPT-2 model.
 
-Base model: gpt-2 large
-
 Fine tuning data: https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-completed-transcripts
 
+Model download: https://drive.google.com/file/d/1-9fwrJXDpZdzcMJsn9s_I4HfOW-gTu9C/view?usp=sharing
+
+    Base model: gpt-2 large
     Epoch: 50
     Train runtime: 14723.0716
     Loss: 0.0268
 
-Model download: https://drive.google.com/file/d/1-9fwrJXDpZdzcMJsn9s_I4HfOW-gTu9C/view?usp=sharing
 
     How to use:
       * First, Choose SpongeBob character name.
