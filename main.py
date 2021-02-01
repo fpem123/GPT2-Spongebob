@@ -77,12 +77,15 @@ def mk_spongebob_script(name, text, length):
             spongebob_story = tokenizer.decode(sample_output, skip_special_tokens=True).split('\n')
 
             for i in range(len(spongebob_story)):
-                if spongebob_story[i][0] in ['(', '[']:
-                    spongebob_story[i] = ['Narrator', spongebob_story[i]]
-                elif ':' in spongebob_story[i]:
-                    spongebob_story[i] = spongebob_story[i].split(':')
+                if spongebob_story[i]:
+                    if spongebob_story[i][0] in ['(', '[']:
+                        spongebob_story[i] = ['Narrator', spongebob_story[i]]
+                    elif ':' in spongebob_story[i]:
+                        spongebob_story[i] = spongebob_story[i].split(':')
+                    else:
+                        spongebob_story[i] = [spongebob_story[i - 1][0], spongebob_story[i]]
                 else:
-                    spongebob_story[i] = [spongebob_story[i - 1][0], spongebob_story[i]]
+                    continue
 
             result[idx] = spongebob_story
 
