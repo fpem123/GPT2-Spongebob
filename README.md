@@ -8,9 +8,9 @@ Base model: gpt-2 large
 
 Fine tuning data: https://www.kaggle.com/mikhailgaerlan/spongebob-squarepants-completed-transcripts
 
-    Epoch: 20
-    Train runtime: 5768.6922
-    Loss: 0.0547
+    Epoch: 50
+    Train runtime: 14723.0716
+    Loss: 0.0268
 
 Model download: https://drive.google.com/file/d/1-9fwrJXDpZdzcMJsn9s_I4HfOW-gTu9C/view?usp=sharing
 
