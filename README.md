@@ -26,7 +26,13 @@ Model download: [Google dirve](https://drive.google.com/file/d/1-9fwrJXDpZdzcMJs
     
     name: The SpongeBob character name.
     text: The base of script.
-    length: The size of generated text.
+    length: The size of generated text. (min: 50)
+
+
+### Output foramt
+
+    {"0": [[character name, dialog], [character name, dialog], ...]}
+
 
 ### Image reference
 
@@ -34,7 +40,24 @@ Model download: [Google dirve](https://drive.google.com/file/d/1-9fwrJXDpZdzcMJs
 
 ## * With CLI *
 
+### Input example
+
     curl -X POST "https://master-gpt2-spongebob-fpem123.endpoint.ainize.ai/SpongeBob" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "name=SpongeBob" -F "text=Hello" -F "length=100"
+
+### Output example
+
+    {
+      "0": [
+        [
+          "SpongeBob",
+          " Hello, Patrick."
+        ],
+        [
+          "Patrick",
+          " [screams] Spiders! Get 'em off me! Get 'em off me! Get 'em off! Get 'em off, off me! Off, off, off! [In Patrick's mind"
+        ]
+      ]
+    }
 
 ## * With swagger *
 
