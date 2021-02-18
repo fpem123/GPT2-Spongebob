@@ -35,6 +35,10 @@ paths:
               text: Hello Patrick
               length: 150
 
+          curl example
+          
+              curl -X POST "https://master-gpt2-spongebob-fpem123.endpoint.ainize.ai/SpongeBob" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "name=SpongeBob" -F "text=Hello" -F "length=100"
+
 
 
         content:
