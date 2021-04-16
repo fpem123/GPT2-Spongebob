@@ -7,9 +7,8 @@ RUN apt-get update && \
     apt-get install -y unzip
 
 RUN pip install --upgrade pip
-RUN pip install transformers
-RUN pip install flask
-RUN pip install waitress
+RUN pip install transformers \
+    flask
 
 RUN mkdir -p /app
 WORKDIR /app
